@@ -1,0 +1,33 @@
+PLUGIN = purple-history-since
+
+PLUGIN_TOP := .
+-include $(PLUGIN_TOP)/local.mak
+PIDGIN_TREE_TOP ?= ../../..
+include $(PIDGIN_TREE_TOP)/libpurple/win32/global.mak
+
+SRC=$(wildcard src/*.c)
+OBJ=$(SRC:%.c=%.o)
+DEP=$(SRC:%.c=%.d)
+
+CFLAGS += -DPLUGIN_VERSION="\"0.1\""
+CFLAGS += -MMD -MP
+
+CFLAGS += -I$(PURPLE_TOP)
+CFLAGS += -I$(GTK_TOP)/include/glib-2.0
+CFLAGS += -I$(GTK_TOP)/lib/glib-2.0/include
+
+DLL_LD_FLAGS += \
+	-L$(PURPLE_TOP) -lpurple \
+	-L$(GTK_TOP)/lib -lglib-2.0
+
+all: build
+
+build: src/$(PLUGIN).dll
+
+src/$(PLUGIN).dll: $(OBJ)
+	$(CC) -shared $(OBJ) $(DLL_LD_FLAGS) -o $@
+
+clean:
+	rm -f $(OBJ) $(DEP) src/$(PLUGIN).dll
+
+-include $(DEP)
