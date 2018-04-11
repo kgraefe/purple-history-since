@@ -139,8 +139,8 @@ static PurplePluginInfo info = {
 
 static void init_plugin(PurplePlugin *plugin) {
 	info.name        = _("History Since");
-	info.summary     = "";
-	info.description = "";
+	info.summary     = _("Avoid duplicated chat history on some XMPP servers.");
+	info.description = _("Avoid duplicated chat history on some XMPP servers.");
 }
 
 PURPLE_INIT_PLUGIN(PLUGIN_STATIC_NAME, init_plugin, info)
