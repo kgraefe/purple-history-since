@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[purple-history-since.base]
+file_filter = po/<lang>.po
+source_file = po/purple-history-since.pot
+source_lang = en
+type = PO
