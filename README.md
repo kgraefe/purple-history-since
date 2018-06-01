@@ -1,5 +1,9 @@
 # Purple History Since
 
+[![License](https://img.shields.io/badge/License-GPLv2-blue.svg?style=flat)](COPYING)
+[![Download](https://img.shields.io/badge/Download-Latest_Release-brightgreen.svg?style=flat)](https://github.com/kgraefe/purple-history-since/releases/latest)
+
+
 Some servers, mainly on the XMPP protocol, send a fixed part of the chat
 history to each client, regardless of whether or not the client has already
 received those messages. This plugin for libpurple clients, such as Pidgin or
