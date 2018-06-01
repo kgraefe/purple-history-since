@@ -11,7 +11,7 @@ AC_CONFIG_MACRO_DIR([m4])
 # Note: AC_DEFINE_UNQUOTED() needs to be in a single line in order to not
 #       break scripts/gen-mingw-config_h.sh on Windows.
 AC_DEFINE_UNQUOTED(PLUGIN_VERSION, ["@@VERSION@@"], [Version])
-AC_DEFINE_UNQUOTED(PLUGIN_WEBSITE, [""], [Website])
+AC_DEFINE_UNQUOTED(PLUGIN_WEBSITE, ["https://github.com/kgraefe/purple-history-since"], [Website])
 AC_DEFINE_UNQUOTED(PLUGIN_ID, ["purple-kgraefe-history-since"], [Pidgin internal plugin ID])
 AC_DEFINE_UNQUOTED(PLUGIN_STATIC_NAME, ["history-since"], [Static name for debug output])
 AC_DEFINE_UNQUOTED(PLUGIN_AUTHOR, ["Konrad Gräfe <konradgraefe@aol.com>"], [Author])
