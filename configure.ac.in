@@ -1,0 +1,47 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ(2.61)
+AC_INIT(purple-history-since, @@VERSION@@)
+AM_INIT_AUTOMAKE([1.9 foreign tar-pax])
+AC_CONFIG_SRCDIR([src/history-since.c])
+AC_CONFIG_HEADER([config.h])
+AC_CONFIG_MACRO_DIR([m4])
+
+# Note: AC_DEFINE_UNQUOTED() needs to be in a single line in order to not
+#       break scripts/gen-mingw-config_h.sh on Windows.
+AC_DEFINE_UNQUOTED(PLUGIN_VERSION, ["@@VERSION@@"], [Version])
+AC_DEFINE_UNQUOTED(PLUGIN_WEBSITE, [""], [Website])
+AC_DEFINE_UNQUOTED(PLUGIN_ID, ["purple-kgraefe-history-since"], [Pidgin internal plugin ID])
+AC_DEFINE_UNQUOTED(PLUGIN_STATIC_NAME, ["history-since"], [Static name for debug output])
+AC_DEFINE_UNQUOTED(PLUGIN_AUTHOR, ["Konrad Gräfe <konradgraefe@aol.com>"], [Author])
+
+
+# Checks for programs.
+AC_PROG_CC
+AC_PROG_LIBTOOL
+AC_PROG_INTLTOOL
+GETTEXT_PACKAGE=purple-history-since
+AC_SUBST(GETTEXT_PACKAGE)
+AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, ["$GETTEXT_PACKAGE"], [Gettext package])
+ALL_LINGUAS="@@LANGUAGES@@"
+AM_GLIB_GNU_GETTEXT
+
+# Checks for libraries.
+PKG_CHECK_MODULES(purple, [purple >= 2.10.0], , [AC_MSG_ERROR(libpurple >= 2.10.0 required! Please make sure that libpurple development files are installed.)])
+LIBS="$LIBS $purple_LIBS"
+CFLAGS="$CFLAGS $purple_CFLAGS -Wall -Werror-implicit-function-declaration"
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+
+AC_CONFIG_FILES([
+	Makefile
+	src/Makefile
+	po/Makefile.in
+])
+AC_OUTPUT
+

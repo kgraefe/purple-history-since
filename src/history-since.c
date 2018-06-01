@@ -11,12 +11,9 @@
 #include <version.h>
 #include <debug.h>
 
-#define PLUGIN_ID "purple-kgraefe-history-since"
-#define PLUGIN_STATIC_NAME "history-since"
-#define PLUGIN_AUTHOR "Konrad Gräfe <konradgraefe@aol.com>"
-#define PLUGIN_WEBSITE ""
+#include "config.h"
+#include "internal.h"
 
-#define _(string) (string)
 #define debug(fmt, ...) \
 	purple_debug_info(PLUGIN_STATIC_NAME, fmt, ##__VA_ARGS__)
 #define error(fmt, ...) \
