@@ -1,5 +1,5 @@
 # Purple History Since Changes
 
-# Version 0.1 (in development)
+# Version 1.0 (2018-06-01)
 - First release
 
