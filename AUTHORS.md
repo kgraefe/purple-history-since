@@ -4,4 +4,5 @@
 - Konrad Gräfe <konradgraefe@aol.com>
 
 ## Translators
-See translation files in the po directory for details.
+### German (de)
+- Konrad Gräfe <konradgraefe@aol.com>, 2019
