@@ -1,4 +1,4 @@
-plugindir = $(libdir)/pidgin
+plugindir = $(shell $(PKG_CONFIG) --variable=plugindir purple)
 DEFS = -DLOCALEDIR=\"$(localedir)\" -DDATADIR=\"$(datadir)\"
 
 plugin_LTLIBRARIES = purple_history_since.la
